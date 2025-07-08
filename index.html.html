@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahrish Jaleel Shaikh - PhD Candidate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .affiliation {
+            font-size: 1.1rem;
+            color: #3498db;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #3498db;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            position: sticky;
+            top: 120px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 4rem;
+            font-weight: 300;
+        }
+
+        .about-text h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .education-item .institution {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .details {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .research-item {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .research-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .research-period {
+            background: #e8f4f8;
+            color: #3498db;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .research-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-item li {
+            color: #666;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .research-item li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .publication-item {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+            border-left: 3px solid #3498db;
+        }
+
+        .publication-item .authors {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item .title {
+            color: #333;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item .venue {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #e8f4f8;
+            color: #3498db;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .award-item {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+            border-left: 3px solid #f39c12;
+        }
+
+        .award-item .year {
+            background: #fef9e7;
+            color: #f39c12;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .award-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-method .icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: #3498db;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-card {
+                position: static;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sahrish Jaleel Shaikh</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sahrish Jaleel Shaikh</h1>
+                <p class="subtitle">PhD Candidate in Industrial Engineering</p>
+                <p class="affiliation">Georgia Institute of Technology</p>
+                
+                <div class="contact-info">
+                    <a href="tel:+14043685808" class="contact-item">
+                        <span>📞</span>
+                        <span>(404) 368-5808</span>
+                    </a>
+                    <a href="mailto:sahrish.shaikh@gatech.edu" class="contact-item">
+                        <span>✉️</span>
+                        <span>sahrish.shaikh@gatech.edu</span>
+                    </a>
+                    <a href="https://linkedin.com/in/sahrishjaleelshaikh" class="contact-item" target="_blank">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                
+                <p style="max-width: 700px; margin: 0 auto 2rem; color: #666; font-size: 1.1rem;">
+                    Graduate research assistant specializing in Physical Internet, Supply Chain Engineering, and Logistics. 
+                    Passionate about developing strategies to improve complex supply chain systems through innovative research and collaboration.
+                </p>
+                
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-card">
+                    <div class="profile-image">S</div>
+                    <h3>Research Focus</h3>
+                    <p><strong>Physical Internet</strong></p>
+                    <p><strong>Supply Chain Engineering</strong></p>
+                    <p><strong>Logistics Optimization</strong></p>
+                    <p><strong>Sustainable Transportation</strong></p>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Research Interests & Expertise</h3>
+                    <p>
+                        I am a dedicated PhD candidate in Industrial Engineering at Georgia Institute of Technology, working under the supervision of Dr. Benoit Montreuil. My research focuses on the intersection of Physical Internet, Supply Chain Engineering, and Logistics, where I develop robust protocols, agent-based simulation models, and innovative tools for multi-echelon supply chain cooperation.
+                    </p>
+                    <p>
+                        Currently, I am working on Net Zero Freight Systems, focusing on sustainable practices and energy efficiency in freight transportation. My work includes designing and implementing strategies for achieving net-zero emissions through alternative fuels, vehicle electrification, and route optimization. I collaborate extensively with industry partners to develop innovative freight solutions that align with global sustainability goals.
+                    </p>
+                    <p>
+                        My experience spans various high-impact projects including regional distribution center optimization with Steelcase Inc., critical PPE supply systems during COVID-19, network redesign for multinational logistics with SF-Express, and multimodal transportation optimization with UPS. Through these projects, I've developed expertise in advanced optimization models, Linux-based deployment systems, and autonomous supply chain technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-item fade-in">
+                    <h3>Ph.D. Industrial Engineering</h3>
+                    <div class="institution">Georgia Institute of Technology, Atlanta, GA</div>
+                    <div class="details">Expected December 2025 | Advisor: Dr. Benoit Montreuil</div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <h3>M.Sc. Industrial Engineering</h3>
+                    <div class="institution">Georgia Institute of Technology, Atlanta, GA</div>
+                    <div class="details">May 2021 | CGPA: 3.7/4.00</div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <h3>M.Sc. Supply Chain Engineering</h3>
+                    <div class="institution">Georgia Institute of Technology, Atlanta, GA</div>
+                    <div class="details">May 2019 | CGPA: 3.78/4.00</div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <h3>B.Sc Hons Management Science</h3>
+                    <div class="institution">Lahore University of Management Sciences (LUMS), Pakistan</div>
+                    <div class="details">August 2016 | CGPA: 3.71/4.00 | Graduation with distinction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="research-grid">
+                <div class="research-item fade-in">
+                    <h3>Graduate Research Assistant</h3>
+                    <div class="research-period">August 2019 - Present</div>
+                    <p><strong>Georgia Institute of Technology, Atlanta, GA</strong></p>
+                    
+                    <h4 style="margin-top: 1.5rem; color: #2c3e50;">Net Zero Freight Systems (2022 - Present)</h4>
+                    <ul>
+                        <li>Developing strategies for achieving net-zero emissions in freight transportation</li>
+                        <li>Research on alternative fuels, vehicle electrification, and route optimization</li>
+                        <li>Collaborating with industry partners on innovative freight solutions</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1.5rem; color: #2c3e50;">Steelcase Inc. - Regional Distribution Center Optimization (2022 - 2024)</h4>
+                    <ul>
+                        <li>Utilizing advanced optimization models with Gurobi optimizer for logistics workload leveling</li>
+                        <li>Developing Linux-based execution guides for Python script deployment</li>
+                        <li>Optimizing handling units, truck capacities, and loading date delays</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1.5rem; color: #2c3e50;">PPE Supply and Distribution (2020 - 2022)</h4>
+                    <ul>
+                        <li>Led implementation of autonomous distribution system for PPE during COVID-19</li>
+                        <li>Achieved zero stockouts and minimal urgent requests throughout the pandemic</li>
+                        <li>Conducted comprehensive system performance evaluations using control tower analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="research-item fade-in">
+                    <h3>Associate Manager - Supply Network Operations</h3>
+                    <div class="research-period">July 2016 - August 2017</div>
+                    <p><strong>Procter & Gamble Pakistan Pvt Ltd.</strong></p>
+                    <ul>
+                        <li>Analyzed E2E supply chain to identify new opportunities and potential savings</li>
+                        <li>Evaluated Direct Port Shipments delivering annual savings of $2M</li>
+                        <li>Handled physical distribution from Port/Warehouse to distributor</li>
+                        <li>Developed stakeholder management skills with Pakistan Customs Authority</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-item fade-in">
+                    <div class="authors">P. M. S. J. Shaikh and B. Montreuil</div>
+                    <div class="title">"Dynamic freight routing and dispatch protocols for the physical internet"</div>
+                    <div class="venue">Proceedings of IPIC 2025 International Physical Internet Conference, 2025</div>
+                </div>
+                
+                <div class="publication-item fade-in">
+                    <div class="authors">Y. L. S. J. Shaikh, Praveen Muthukrishnan and B. Montreuil</div>
+                    <div class="title">"Dynamic directional routing of freight in the physical internet"</div>
+                    <div class="venue">IISE Annual Conference Proceedings, 2025 - 2nd Best Student Paper Award</div>
+                </div>
+                
+                <div class="publication-item fade-in">
+                    <div class="authors">S. J. Shaikh and B. Montreuil</div>
+                    <div class="title">"Dynamic directional routing for the physical internet: A sector-based approach with dynamic adjustment"</div>
+                    <div class="venue">Proceedings of IPIC 2024 International Physical Internet Conference, 2024</div>
+                </div>
+                
+                <div class="publication-item fade-in">
+                    <div class="authors">S. J. Shaikh, A. S. Pothen, and B. Montreuil</div>
+                    <div class="title">"Hyperconnected and autonomous distribution system for societally critical products"</div>
+                    <div class="venue">Proceedings of IPIC 2023 International Physical Internet Conference, pp. 315-325, 2023</div>
+                </div>
+                
+                <div class="publication-item fade-in">
+                    <div class="authors">Li J., Shaikh S., B. Montreuil</div>
+                    <div class="title">"Physical Internet Operations: Hyperconnected Logistics Realization of Sustainability"</div>
+                    <div class="venue">Book Chapter in "Physical Internet: The Revolution We are Encountering", China, pp. 285-303, 2022</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Operations Research</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linear Programming</span>
+                        <span class="skill-tag">Mixed Integer Programming</span>
+                        <span class="skill-tag">Stochastic Programming</span>
+                        <span class="skill-tag">Dynamic Programming</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>Software & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Gurobi</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">AnyLogic</span>
+                        <span class="skill-tag">SPSS</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">LaTeX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item fade-in">
+                    <div class="year">2025</div>
+                    <h4>2nd Best Student Paper Award</h4>
+                    <p>IISE Annual Conference and Expo 2025, Atlanta, USA</p>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="year">2023</div>
+                    <h4>Physical Internet Generation Award</h4>
+                    <p>International Physical Internet Conference (IPIC 2023), Greece</p>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="year">2018</div>
+                    <h4>Physical Internet Student Award</h4>
+                    <p>International Physical Internet Conference (IPIC 2018), Netherlands</p>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="year">2017</div>
+                    <h4>US Fulbright Scholarship</h4>
+                    <p>For Masters program at Georgia Institute of Technology</p>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="year">2017</div>
+                    <h4>P&G Power of You (POY) Awards</h4>
+                    <p>Two consecutive quarters under P&G's employee recognition program</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+                    I'm always open to discussing research opportunities, collaborations, and innovative projects in supply chain engineering and logistics.
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method fade-in">
+                        <div class="icon">📧</div>
+                        <h4>Email</h4>
+                        <a href="mailto:sahrish.shaikh@gatech.edu">sahrish.shaikh@gatech.edu</a>
+                    </div>
+                    
+                    <div class="contact-method fade-in">
+                        <div class="icon">📱</div>
+                        <h4>Phone</h4>
+                        <a href="tel:+14043685808">(404) 368-5808</a>
+                    </div>
+                    
+                    <div class="contact-method fade-in">
+                        <div class="icon">💼</div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://linkedin.com/in/sahrishjaleelshaikh" target="_blank">Connect with me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sahrish Jaleel Shaikh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Mobile menu toggle (basic functionality)
+        const logo = document.querySelector('.logo');
+        const navLinks = document.querySelector('.nav-links');
+        
+        // Simple mobile responsiveness
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                logo.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        }
+
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+    </script>
+</body>
+</html>
